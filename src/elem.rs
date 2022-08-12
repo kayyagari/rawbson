@@ -19,9 +19,7 @@ pub struct Element<'a> {
 }
 
 impl<'a> Element<'a> {
-    // This is not public.  An Element object can only be created by iterating over a bson document method
-    // on RawBsonDoc
-    pub(super) fn new(element_type: ElementType, data: &'a [u8]) -> Element<'a> {
+    pub fn new(element_type: ElementType, data: &'a [u8]) -> Element<'a> {
         Element { element_type, data }
     }
 
